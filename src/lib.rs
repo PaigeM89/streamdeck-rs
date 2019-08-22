@@ -449,8 +449,8 @@ pub struct VisibilityPayload<S> {
     pub settings: S,
     /// The location of the key, or None if this action instance is part of a multi action.
     pub coordinates: Option<Coordinates>,
-    /// The state of the action instance.
-    pub state: u8,
+    /// The state of the action instance. Only populated if manifest.json defines 2 or more States.
+    pub state: Option<u8>,
     //TODO: is_in_multi_action ignored. replace coordinates with enum Location { Coordinates, MultiAction }.
 }
 
